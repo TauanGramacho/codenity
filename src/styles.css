@@ -221,6 +221,27 @@ img {
   line-height: 1.7;
 }
 
+.hero-tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 24px auto 0;
+}
+
+.hero-tags span {
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid rgba(97, 206, 112, 0.35);
+  border-radius: var(--radius);
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(0, 0, 0, 0.32);
+  font-size: 0.92rem;
+  font-weight: 750;
+}
+
 .hero-actions {
   display: flex;
   justify-content: center;
@@ -326,6 +347,50 @@ img {
 
 .service-card p {
   color: rgba(255, 255, 255, 0.78);
+}
+
+.support-banner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 24px;
+  align-items: center;
+  margin-top: 28px;
+  padding: 28px;
+  border: 1px solid rgba(97, 206, 112, 0.3);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(135deg, rgba(10, 72, 16, 0.56), rgba(255, 255, 255, 0.04)),
+    rgba(255, 255, 255, 0.04);
+}
+
+.support-banner svg {
+  color: var(--green);
+}
+
+.support-banner h3 {
+  margin: 0 0 8px;
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+}
+
+.support-banner p {
+  margin: 0;
+  max-width: 760px;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.7;
+}
+
+.support-banner a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 16px;
+  border-radius: var(--radius);
+  color: var(--black);
+  background: var(--green);
+  font-weight: 850;
+  white-space: nowrap;
 }
 
 .process-section {
@@ -718,6 +783,10 @@ img {
     grid-template-columns: 1fr;
   }
 
+  .support-banner {
+    grid-template-columns: 1fr;
+  }
+
   .process-copy {
     position: static;
   }
@@ -732,6 +801,16 @@ img {
   .hero-actions,
   .button {
     width: 100%;
+  }
+
+  .hero-tags {
+    justify-content: stretch;
+  }
+
+  .hero-tags span {
+    flex: 1 1 calc(50% - 10px);
+    justify-content: center;
+    text-align: center;
   }
 
   .eyebrow,

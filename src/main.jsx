@@ -8,6 +8,7 @@ import {
   CheckCircle2,
   Code2,
   Instagram,
+  LifeBuoy,
   Mail,
   MapPin,
   Menu,
@@ -60,8 +61,8 @@ const services = [
   },
   {
     icon: Wrench,
-    title: "Manutenção",
-    text: "Correção, prevenção e evolução de sistemas, páginas e ambientes digitais.",
+    title: "Suporte técnico",
+    text: "Atendimento para problemas técnicos, manutenção, melhorias, sistemas, páginas, máquinas e rotinas digitais.",
   },
 ];
 
@@ -86,8 +87,8 @@ const solutions = [
     text: "Previsão de vendas e crescimento, envio automatizado de propostas, segmentação de leads e análise de comportamento.",
   },
   {
-    title: "Outros setores",
-    text: "Soluções variadas para diferentes rotinas empresariais, sempre com foco no sucesso da operação.",
+    title: "Demandas técnicas",
+    text: "Suporte, manutenção, configuração, orientação e soluções sob medida para qualquer rotina de tecnologia da empresa.",
   },
 ];
 
@@ -211,8 +212,15 @@ function App() {
             <p className="eyebrow">Codenity solutions</p>
             <h1>Experimente sair na frente com soluções perfeitas para o seu negócio!</h1>
             <p className="hero-copy">
-              Criamos soluções digitais, integrações e automações que aproximam tecnologia da rotina real da sua empresa.
+              Somos o time de tecnologia que ajuda sua empresa em sites, sistemas, suporte técnico, manutenção,
+              automações, dados e IA.
             </p>
+            <div className="hero-tags" aria-label="Áreas de atuação">
+              <span>Suporte técnico</span>
+              <span>Desenvolvimento</span>
+              <span>Automação</span>
+              <span>Dados & IA</span>
+            </div>
             <div className="hero-actions">
               <a className="button" href={whatsappUrl} target="_blank" rel="noreferrer">
                 Entre em contato
@@ -240,6 +248,21 @@ function App() {
                 </article>
               ))}
             </div>
+
+            <article className="support-banner">
+              <LifeBuoy size={34} strokeWidth={1.8} />
+              <div>
+                <h3>Também somos seu suporte técnico de confiança.</h3>
+                <p>
+                  Precisa resolver algo de tecnologia e não sabe por onde começar? A Codenity atua como um time técnico
+                  parceiro para organizar, configurar, corrigir, integrar e acompanhar as demandas digitais da sua empresa.
+                </p>
+              </div>
+              <a href={whatsappUrl} target="_blank" rel="noreferrer">
+                Falar com suporte
+                <ArrowUpRight size={18} />
+              </a>
+            </article>
           </div>
         </section>
 
@@ -290,8 +313,8 @@ function App() {
                 tecnologia de verdade transforma, aproxima e impulsiona negócios.
               </p>
               <p>
-                Desenvolvemos soluções sob medida e caminhamos com você em cada etapa, tornando a tecnologia acessível,
-                inteligente e integrada à realidade do seu negócio.
+                Desenvolvemos soluções sob medida e também apoiamos sua operação como suporte técnico, tornando a
+                tecnologia acessível, inteligente e integrada à realidade do seu negócio.
               </p>
               <p>
                 Oferecemos desenvolvimento web, APIs, automação, análise de dados, manutenção e chatbots com IA, sempre
