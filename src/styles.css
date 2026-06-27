@@ -171,9 +171,9 @@ img {
   bottom: 0;
   left: 0;
   z-index: 1;
-  height: 118px;
+  height: 82px;
   pointer-events: none;
-  background: linear-gradient(180deg, rgba(5, 8, 5, 0), var(--black));
+  background: linear-gradient(180deg, rgba(5, 8, 5, 0), rgba(5, 8, 5, 0.76));
 }
 
 .hero-slides,
@@ -295,7 +295,7 @@ img {
   right: 0;
   left: 0;
   z-index: 0;
-  height: 86px;
+  height: 52px;
   pointer-events: none;
 }
 
@@ -438,7 +438,7 @@ img {
 }
 
 .process-section::before {
-  background: linear-gradient(180deg, var(--black), rgba(245, 248, 242, 0));
+  background: linear-gradient(180deg, rgba(5, 8, 5, 0.16), rgba(245, 248, 242, 0));
 }
 
 .process-layout {
@@ -496,7 +496,7 @@ img {
 }
 
 .metrics-band::before {
-  background: linear-gradient(180deg, var(--surface), rgba(5, 8, 5, 0));
+  background: linear-gradient(180deg, rgba(245, 248, 242, 0.12), rgba(5, 8, 5, 0));
 }
 
 .metrics-grid {
@@ -545,7 +545,7 @@ img {
 }
 
 .about-section::before {
-  background: linear-gradient(180deg, #0a1d0d, rgba(7, 17, 9, 0));
+  background: linear-gradient(180deg, rgba(10, 29, 13, 0.42), rgba(7, 17, 9, 0));
 }
 
 .about-layout {
@@ -618,7 +618,7 @@ img {
 }
 
 .solutions-section::before {
-  background: linear-gradient(180deg, #0f1f12, rgba(255, 255, 255, 0));
+  background: linear-gradient(180deg, rgba(15, 31, 18, 0.14), rgba(255, 255, 255, 0));
 }
 
 .solutions-grid {
@@ -642,7 +642,7 @@ img {
 }
 
 .contact-section::before {
-  background: linear-gradient(180deg, var(--white), rgba(5, 8, 5, 0));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(5, 8, 5, 0));
 }
 
 .contact-layout {
