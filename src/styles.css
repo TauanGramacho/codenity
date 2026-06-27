@@ -114,6 +114,15 @@ img {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.header-cta svg,
+.button svg,
+.support-banner a svg,
+.contact-list svg,
+.social-row svg,
+.footer-inner a svg {
+  flex: 0 0 auto;
+}
+
 .header-cta:hover,
 .button:hover {
   transform: translateY(-2px);
@@ -155,6 +164,18 @@ img {
   text-align: center;
 }
 
+.hero::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  height: 118px;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(5, 8, 5, 0), var(--black));
+}
+
 .hero-slides,
 .slide,
 .hero-shade {
@@ -191,7 +212,7 @@ img {
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   width: min(920px, 100%);
 }
 
@@ -209,8 +230,8 @@ img {
 .hero h1 {
   max-width: 880px;
   margin: 0 auto;
-  font-size: clamp(2.25rem, 5vw, 4.15rem);
-  line-height: 1.02;
+  font-size: clamp(2.12rem, 4.55vw, 3.9rem);
+  line-height: 1.04;
 }
 
 .hero-copy {
@@ -251,12 +272,31 @@ img {
 }
 
 .section {
+  position: relative;
+  overflow: clip;
   padding: clamp(68px, 8vw, 116px) 24px;
 }
 
 .section-inner {
+  position: relative;
+  z-index: 1;
   width: min(1160px, 100%);
   margin: 0 auto;
+}
+
+.process-section::before,
+.metrics-band::before,
+.about-section::before,
+.solutions-section::before,
+.contact-section::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: 0;
+  left: 0;
+  z-index: 0;
+  height: 86px;
+  pointer-events: none;
 }
 
 .dark-section {
@@ -397,6 +437,10 @@ img {
   background: var(--surface);
 }
 
+.process-section::before {
+  background: linear-gradient(180deg, var(--black), rgba(245, 248, 242, 0));
+}
+
 .process-layout {
   display: grid;
   grid-template-columns: 0.82fr 1.18fr;
@@ -444,9 +488,15 @@ img {
 }
 
 .metrics-band {
+  position: relative;
+  overflow: clip;
   padding: 64px 24px;
   color: var(--white);
   background: linear-gradient(135deg, var(--black), #0a1d0d);
+}
+
+.metrics-band::before {
+  background: linear-gradient(180deg, var(--surface), rgba(5, 8, 5, 0));
 }
 
 .metrics-grid {
@@ -488,7 +538,14 @@ img {
 }
 
 .about-section {
-  background: #ebefea;
+  color: var(--white);
+  background:
+    radial-gradient(circle at 78% 24%, rgba(97, 206, 112, 0.12), transparent 34%),
+    linear-gradient(180deg, #071109 0%, #0b170e 58%, #0f1f12 100%);
+}
+
+.about-section::before {
+  background: linear-gradient(180deg, #0a1d0d, rgba(7, 17, 9, 0));
 }
 
 .about-layout {
@@ -504,14 +561,21 @@ img {
 }
 
 .about-copy p {
-  color: #384037;
+  color: rgba(255, 255, 255, 0.74);
 }
 
 .about-visual {
-  padding: 18px;
+  padding: 10px;
+  border: 1px solid rgba(97, 206, 112, 0.22);
   border-radius: var(--radius);
-  background: var(--white);
-  box-shadow: var(--shadow);
+  background:
+    linear-gradient(145deg, rgba(97, 206, 112, 0.14), rgba(255, 255, 255, 0.035)),
+    #061009;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.34);
+}
+
+.about-visual img {
+  border-radius: calc(var(--radius) - 2px);
 }
 
 .principles {
@@ -524,17 +588,26 @@ img {
 .principles article {
   min-height: 245px;
   padding: 28px;
+  border: 1px solid rgba(97, 206, 112, 0.18);
   border-radius: var(--radius);
-  background: var(--white);
-  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.07);
+  background: rgba(255, 255, 255, 0.055);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.16);
 }
 
-.principles h3,
+.principles h3 {
+  color: var(--green);
+}
+
 .solutions-grid h3 {
   color: var(--green-strong);
 }
 
+.principles p {
+  color: rgba(255, 255, 255, 0.74);
+}
+
 .principles ul {
+  color: rgba(255, 255, 255, 0.74);
   margin: 0;
   padding-left: 18px;
   line-height: 1.8;
@@ -542,6 +615,10 @@ img {
 
 .solutions-section {
   background: var(--white);
+}
+
+.solutions-section::before {
+  background: linear-gradient(180deg, #0f1f12, rgba(255, 255, 255, 0));
 }
 
 .solutions-grid {
@@ -562,6 +639,10 @@ img {
 .contact-section {
   color: var(--white);
   background: var(--black);
+}
+
+.contact-section::before {
+  background: linear-gradient(180deg, var(--white), rgba(5, 8, 5, 0));
 }
 
 .contact-layout {
@@ -697,7 +778,15 @@ img {
 }
 
 .footer-inner a {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
   color: rgba(255, 255, 255, 0.76);
+}
+
+.footer-inner a svg {
+  color: var(--green);
+  opacity: 0.9;
 }
 
 .footer-inner a:hover {

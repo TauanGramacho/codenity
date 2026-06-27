@@ -7,15 +7,18 @@ import {
   Cable,
   CheckCircle2,
   Code2,
+  Home,
   Instagram,
   LifeBuoy,
+  Lightbulb,
   Mail,
   MapPin,
   Menu,
+  MessageCircle,
   Phone,
   Rocket,
-  Send,
   Target,
+  Users,
   Workflow,
   Wrench,
   X,
@@ -26,11 +29,31 @@ const whatsappUrl =
   "https://wa.me/5571991488815?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20parceria%20com%20a%20CODENITY!";
 
 const navItems = [
-  ["Home", "#home"],
-  ["Serviços", "#servicos"],
-  ["Sobre nós", "#sobre"],
-  ["Soluções", "#solucoes"],
-  ["Contatos", "#contatos"],
+  { label: "Home", href: "#home", icon: Home },
+  { label: "Serviços", href: "#servicos", icon: Wrench },
+  { label: "Sobre nós", href: "#sobre", icon: Users },
+  { label: "Soluções", href: "#solucoes", icon: Lightbulb },
+  { label: "Contatos", href: "#contatos", icon: Phone },
+];
+
+const footerContactItems = [
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/codenity.ti/",
+    icon: Instagram,
+    external: true,
+  },
+  {
+    label: "Email",
+    href: "mailto:codenity.solutions@gmail.com",
+    icon: Mail,
+  },
+  {
+    label: "Whatsapp",
+    href: whatsappUrl,
+    icon: MessageCircle,
+    external: true,
+  },
 ];
 
 const services = [
@@ -124,7 +147,7 @@ function Header() {
       </button>
 
       <nav className={open ? "main-nav is-open" : "main-nav"} aria-label="Menu principal">
-        {navItems.map(([label, href]) => (
+        {navItems.map(({ label, href }) => (
           <a href={href} key={href} onClick={() => setOpen(false)}>
             {label}
           </a>
@@ -132,6 +155,7 @@ function Header() {
       </nav>
 
       <a className="header-cta" href="https://ig.me/m/codenity.ti" target="_blank" rel="noreferrer">
+        <MessageCircle size={18} />
         Fale conosco
         <ArrowUpRight size={18} />
       </a>
@@ -183,7 +207,7 @@ function ContactForm() {
       </label>
 
       <button className="button button-full" type="submit">
-        <Send size={18} />
+        <MessageCircle size={18} />
         Enviar pelo WhatsApp
       </button>
 
@@ -223,8 +247,8 @@ function App() {
             </div>
             <div className="hero-actions">
               <a className="button" href={whatsappUrl} target="_blank" rel="noreferrer">
+                <MessageCircle size={18} />
                 Entre em contato
-                <ArrowUpRight size={18} />
               </a>
               <a className="button button-ghost" href="#servicos">
                 Ver serviços
@@ -259,8 +283,8 @@ function App() {
                 </p>
               </div>
               <a href={whatsappUrl} target="_blank" rel="noreferrer">
+                <MessageCircle size={18} />
                 Falar com suporte
-                <ArrowUpRight size={18} />
               </a>
             </article>
           </div>
@@ -329,7 +353,11 @@ function App() {
             </div>
 
             <div className="about-visual">
-              <img src="/assets/images/hero-technology.png" alt="Equipe mirando objetivos de negócio com tecnologia" />
+              <img
+                src="/assets/images/goal-codenity.png"
+                alt="Equipe da Codenity alinhando soluções de tecnologia a objetivos de negócio"
+                loading="lazy"
+              />
             </div>
           </div>
 
@@ -400,6 +428,7 @@ function App() {
                   Instagram
                 </a>
                 <a href={whatsappUrl} target="_blank" rel="noreferrer">
+                  <MessageCircle size={18} />
                   Whatsapp
                 </a>
               </div>
@@ -418,21 +447,21 @@ function App() {
           </div>
           <nav aria-label="Institucional">
             <h2>Institucional</h2>
-            {navItems.map(([label, href]) => (
+            {navItems.map(({ label, href, icon: Icon }) => (
               <a href={href} key={href}>
+                <Icon size={17} />
                 {label}
               </a>
             ))}
           </nav>
           <nav aria-label="Contatos">
             <h2>Contatos</h2>
-            <a href="https://www.instagram.com/codenity.ti/" target="_blank" rel="noreferrer">
-              Instagram
-            </a>
-            <a href="mailto:codenity.solutions@gmail.com">Email</a>
-            <a href={whatsappUrl} target="_blank" rel="noreferrer">
-              Whatsapp
-            </a>
+            {footerContactItems.map(({ label, href, icon: Icon, external }) => (
+              <a href={href} key={href} target={external ? "_blank" : undefined} rel={external ? "noreferrer" : undefined}>
+                <Icon size={17} />
+                {label}
+              </a>
+            ))}
           </nav>
         </div>
         <div className="footer-bottom">
