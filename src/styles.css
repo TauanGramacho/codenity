@@ -451,16 +451,24 @@ img {
 
 .metrics-grid {
   display: grid;
-  grid-template-columns: 1.6fr repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
-  align-items: stretch;
+  align-items: start;
 }
 
-.metrics-title,
+.metrics-title {
+  grid-column: 1 / -1;
+  padding: 0 0 8px;
+}
+
 .metrics-grid article {
   padding: 26px;
   border-radius: var(--radius);
   background: rgba(255, 255, 255, 0.055);
+}
+
+.metrics-title h2 {
+  max-width: 900px;
 }
 
 .metrics-grid strong {
@@ -472,6 +480,11 @@ img {
 .metrics-grid p {
   margin: 12px 0 0;
   line-height: 1.5;
+}
+
+.metric-emphasis {
+  color: var(--green);
+  font-weight: 850;
 }
 
 .about-section {
@@ -731,10 +744,6 @@ img {
 
   .metrics-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .metrics-title {
-    grid-column: 1 / -1;
   }
 }
 

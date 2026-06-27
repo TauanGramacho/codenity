@@ -61,8 +61,8 @@ const services = [
   },
   {
     icon: Wrench,
-    title: "Suporte técnico",
-    text: "Atendimento para problemas técnicos, manutenção, melhorias, sistemas, páginas, máquinas e rotinas digitais.",
+    title: "Manutenção",
+    text: "Correção, prevenção, suporte técnico e evolução de sistemas, páginas, máquinas e ambientes digitais.",
   },
 ];
 
@@ -93,9 +93,9 @@ const solutions = [
 ];
 
 const metrics = [
-  ["6", "mil acessos mensais às soluções"],
-  ["4", "milhões de registros analisados"],
-  ["15", "projetos ativos em empresas reais"],
+  { value: "6", emphasis: "mil", label: "acessos mensais às soluções" },
+  { value: "4", emphasis: "milhões", label: "de registros analisados" },
+  { value: "15", emphasis: "projetos ativos", label: "em empresas reais" },
 ];
 
 function Header() {
@@ -292,12 +292,18 @@ function App() {
           <div className="section-inner metrics-grid">
             <div className="metrics-title">
               <p className="section-kicker">Realizações</p>
-              <h2>Resultados que acompanham negócios reais.</h2>
+              <h2>
+                Resultados que acompanham
+                <br />
+                negócios reais.
+              </h2>
             </div>
-            {metrics.map(([value, label]) => (
+            {metrics.map(({ value, emphasis, label }) => (
               <article key={label}>
                 <strong>+{value}</strong>
-                <p>{label}</p>
+                <p>
+                  <span className="metric-emphasis">{emphasis}</span> {label}
+                </p>
               </article>
             ))}
           </div>
