@@ -1,24 +1,13 @@
 # Codenity
 
-Site institucional da Codenity recriado em React + Vite, sem dependência de WordPress, PHP ou banco de dados.
+Site institucional da Codenity.
 
-## Rodar localmente
+## Propriedade
 
-```powershell
-npm install
-npm run dev
-```
+Este repositório contém código proprietário da Codenity.
 
-## Build
+Todos os direitos são reservados. O uso, cópia, modificação, redistribuição ou publicação deste código não é permitido sem autorização expressa da Codenity.
 
-```powershell
-npm run build
-```
+## Contato
 
-## Deploy no Cloudflare Pages
-
-- Framework preset: `Vite`
-- Build command: `npm run build`
-- Output directory: `dist`
-
-Depois, conecte o domínio `codenity.app.br` no painel do Cloudflare Pages.
+Para assuntos comerciais ou técnicos, entre em contato por `codenity.solutions@gmail.com`.
